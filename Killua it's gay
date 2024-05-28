@@ -67,7 +67,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Claim
            print("buttonpressed")
     end    
 })  
-Tab:AddDropdown({
+mainTab:AddDropdown({
     Name = "Dropdown",
     Default = "1",
     Options = {"1","2","3","4","5","6","7"},
