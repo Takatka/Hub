@@ -16,25 +16,25 @@ local Section = mainTab:AddSection({
 })
 
 --values
-getgenv()."weapon" = false
+getgenv().punch= false
 
 
 --functionns
-function do"weapon"()
-while getgenv()."weapon" == true do
+function dopunch()
+while getgenv().punch == true do
 local args = {
     [1] = 1
 }
 
-game:GetService("Players").LocalPlayer.Character."weapon".Event:FireServer(unpack(args))
+game:GetService("Players").LocalPlayer.Character.punch.Event:FireServer(unpack(args))
 
-    wait(0.1)
+    wait(0.5)
       end
     end 
 
 --toggles
 mainTab:AddToggle({
-  Name = "auto sell",
+  Name = "auto gain",
   Default = false,
   Callback = function(bool)
     getgenv().punch = bool
@@ -47,7 +47,7 @@ mainTab:AddButton({
   Name = "maximum multiple!",
   Callback = function()
       local args = {
-        [1] = 40000 * 100000
+        [1] = 40000 * 10000
       }
 
       game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("DoublePower"):FireServer(unpack(args))
@@ -96,7 +96,7 @@ Tab:AddDropdown({
         end
     end
 })
---tab2
+
 local petsTab = Window:MakeTab({
   Name = "pets",
   Icon = "rbxassetid://4483345998",
