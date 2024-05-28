@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+  local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
 --window
 local Window = OrionLib:MakeWindow({Name = "All universe hub kamehameha sim", HidePremium = false, IntroText = "All universe hub", SaveConfig = true, ConfigFolder = "OrionTest"})
@@ -20,13 +20,13 @@ getgenv().punch = false
 
 
 --functionns
-function dopunch()
-while getgenv().punch == true do
+function do"weapon"()
+while getgenv()."weapon" == true do
 local args = {
     [1] = 1
 }
 
-game:GetService("Players").LocalPlayer.Character.Punch.Event:FireServer(unpack(args))
+game:GetService("Players").LocalPlayer.Character."weapon".Event:FireServer(unpack(args))
 
     wait(0.1)
       end
@@ -47,7 +47,7 @@ mainTab:AddButton({
   Name = "maximum multiple!",
   Callback = function()
       local args = {
-        [1] = 400 * 10000
+        [1] = 40000 * 100000
       }
 
       game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("DoublePower"):FireServer(unpack(args))
@@ -67,8 +67,8 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Claim
            print("buttonpressed")
     end    
 })  
-mainTab:AddDropdown({
-    Name = "Dropdown",
+Tab:AddDropdown({
+    Name = "weapon",
     Default = "1",
     Options = {"1","2","3","4","5","6","7"},
     Callback = function(number)
@@ -96,3 +96,20 @@ mainTab:AddDropdown({
         end
     end
 })
+--tab2
+local petsTab = Window:MakeTab({
+  Name = "pets",
+  Icon = "rbxassetid://4483345998",
+  PremiumOnly = false
+})
+petsTab:AddButton({
+  Name =  " ninja pet ",
+  Callback = function()
+  local args = {
+    [1] = true
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ClaimTimePet"):InvokeServer(unpack(args))
+             print("buttonpressed")
+    end    
+})  
