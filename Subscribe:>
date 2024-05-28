@@ -16,7 +16,7 @@ local Section = mainTab:AddSection({
 })
 
 --values
-getgenv().punch = false
+getgenv()."weapon" = false
 
 
 --functionns
