@@ -16,11 +16,6 @@ local petTab = Window:MakeTab({
   PremiumOnly = false
 })
 
---section
-local Section = mainTab:AddSection({
-  Name = "farm"
-})
-
 --buttons
 mainTab:AddButton({
   Name = "maximum multiple!",
