@@ -42,19 +42,6 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Claim
     end    
 })  
 
-petTab:AddButton({
-  Name = "ninja pet ,
-  Callback = function()
-      local args = {
-        [1] = true
-      }
-
-      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ClaimTimePet"):InvokeServer(unpack(args))
-          print("button pressed")
-    end    
-})
-
-
 --drop down
 mainTab:AddDropdown({
 	Name = "Dropdown",
@@ -88,3 +75,17 @@ mainTab:AddDropdown({
 		end
 	end
 })
+
+petTab:AddButton({
+  Name = "ninja pet ,
+  Callback = function()
+      local args = {
+        [1] = true
+      }
+
+      game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ClaimTimePet"):InvokeServer(unpack(args))
+          print("button pressed")
+    end    
+})
+
+
