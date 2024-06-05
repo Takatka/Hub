@@ -16,11 +16,7 @@ local serectTab = Window:MakeTab({
   PremiumOnly = false
 })
 
-local hatch= Window:MakeTab({
-  Name = "hatching",
-  Icon = "rbxassetid://4483345998",
-  PremiumOnly = false
-})
+
 local autogainTab = Window:MakeTab({
   Name = "auto gain",
   Icon = "rbxassetid://4483345998",
@@ -37,7 +33,7 @@ mainTab:AddButton({
   Name = "maximum multiple!",
   Callback = function()
       local args = {
-        [1] = 900000 * 100000
+        [1] = 99999
       }
 
 game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("DoublePower"):FireServer(unpack(args))
@@ -45,7 +41,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Doubl
     end    
 })
 mainTab:AddButton({
-  Name= "instant 10b spin",
+  Name= "instant 10b power",
   Callback = function()
 local args = {
     [1] = "Power",
@@ -69,6 +65,29 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Claim
             print("buttonPressed")
          end
 })
+serectTab:AddButton({
+  Name= "codes",
+  Callback = function()
+local codes = {
+    "Release",
+    "Release",
+    "SorryForTheBugs",
+    "NewInviteRewards",
+    "SubToRusso",
+    "SubToBaxtrix",
+    "ItsMeBelowZero",
+    "SubToFreekid26",
+    "SubToSnickers",
+    "NewUpdate"
+}
+
+for i, code in pairs(codes) do
+    local args = { [1] = code }
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Codes"):InvokeServer(unpack(args))
+end
+            print("buttonPressed")
+         end
+})
 
 serectTab:AddButton({
   Name = "Invite Pet" ,
@@ -84,9 +103,15 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Claim
 })
 --values 
 getgenv().daily = false
-getgenv().Jungle = false
-getgenv().heaven = false
-getgenv().Magma = false
+getgenv().rebirth = false
+getgenv().power = false
+getgenv().punch = false
+getgenv().Scythe = false
+getgenv().Sword = false
+getgenv().Staff = false
+getgenv().Slayer = false
+getgenv().Destroyer = false
+getgenv().Blade = false
 --function 
 function dodaily()
           while getgenv().daily == true do
@@ -95,38 +120,107 @@ function dodaily()
                 wait(0.05)
        end
 end   
-function doJungle ()     
-      while getgenv().Jungle == true do
-                  local args = {
-                              [1] = 10
+function dorebirth()
+           while getgenv().rebirth == true do
+                      local args = {
+                                [1] = 1
 }
 
-                   game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("BuyEgg"):InvokeServer(unpack(args))
+                game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Rebirth"):InvokeServer(unpack(args))
+                      
+                         wait(0.05)
+                         
+           end
+end   
+function dopower ()     
+      while getgenv().power == true do
+ 
+                   local args = {
+                                  [1] = "x3 Power",
+                                  [2] = 30
+}
+
+                  game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("AddWheelSpinValue"):FireServer(unpack(args))
                        
-                wait(0.05)
+                wait(0.1)
        end
 end
-function doheaven ()              
-       while getgenv().heaven == true do
+function dopunch()              
+       while getgenv().punch== true do
                   local args = {
-                              [1] = 25
+                              [1] = 1
 }
 
-                   game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("BuyEgg"):InvokeServer(unpack(args))
+                   game:GetService("Players").LocalPlayer.Character.Punch.Event:FireServer(unpack(args))
                 wait(0.05)
        end
 end   
- function doMagma ()          
-       while getgenv().Magma == true do
+ function doscyth()          
+       while getgenv().Scythe == true do
                   local args = {
-                              [1] = 50
+                              [1] = 2
 }
 
-                   game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("BuyEgg"):InvokeServer(unpack(args))
+                   game:GetService("Players").LocalPlayer.Character.Scythe.Event:FireServer(unpack(args))
                        
                 wait(0.05)
        end
 end         
+function doSword()          
+       while getgenv().Sword == true do
+                  local args = {
+                              [1] = 3
+}
+
+                   game:GetService("Players").LocalPlayer.Character:FindFirstChild("Cosmic Sword").Event:FireServer(unpack(args))
+                       
+                wait(0.05)
+       end
+end  
+function doStaff()          
+       while getgenv().Staff == true do
+                  local args = {
+                              [1] = 1
+}
+
+                   game:GetService("Players").LocalPlayer.Character:FindFirstChild("Spiritual Staff").Event:FireServer(unpack(args))
+                       
+                wait(0.05)
+       end
+end  
+function doSlayer()          
+       while getgenv().Slayer == true do
+                  local args = {
+                              [1] = 2
+}
+
+                   game:GetService("Players").LocalPlayer.Character.Dragonslayer.Event:FireServer(unpack(args))
+                       
+                wait(0.05)
+       end
+end  
+function doDestroyer()          
+       while getgenv().Destroyer == true do
+                  local args = {
+                              [1] = 1
+}
+
+                   game:GetService("Players").LocalPlayer.Character:FindFirstChild("Universe Destroyer").Event:FireServer(unpack(args))
+                       
+                wait(0.05)
+       end
+end  
+function doBlade()          
+       while getgenv().Blade == true do
+                  local args = {
+                              [1] = 3
+}
+
+                   game:GetService("Players").LocalPlayer.Character:FindFirstChild("Ancient Dragon Blade").Event:FireServer(unpack(args))
+                       
+                wait(0.05)
+       end
+end
 --toggles
 serectTab:AddToggle({
   Name = "daily rewards",
@@ -137,33 +231,87 @@ serectTab:AddToggle({
       dodaily()
     end
   end})
-hatchTab:AddToggle({
-  Name = "Jungle eggs",
+serectTab:AddToggle({
+  Name = "auto rebrith",
   Default = false,
   Callback = function(bool)
-    getgenv().Jungle  = bool
+    getgenv().rebirth  = bool
     if bool then 
-      doJungle ()
+      dorebirth ()
     end
   end})
   
- hatchTab:AddToggle({
-  Name = "heaven egg",
+ serectTab:AddToggle({
+  Name = "Infinity×5 boost",
   Default = false,
   Callback = function(bool)
-    getgenv().heaven= bool
+    getgenv().power = bool
     if bool then 
-      doheaven()
+      dopower()
     end
   end})
   
-  hatchTab:AddToggle({
-  Name = "Magma egg",
+  autogainTab:AddToggle({
+  Name = "punch",
   Default = false,
   Callback = function(bool)
-    getgenv().Magma= bool
+    getgenv().punch= bool
     if bool then 
-      doMagma()
+      dopunch()
+    end
+  end})
+  autogainTab:AddToggle({
+  Name = "scythe",
+  Default = false,
+  Callback = function(bool)
+    getgenv().Scythe= bool
+    if bool then 
+      doScythe()
+    end
+  end})
+  autogainTab:AddToggle({
+  Name = "sword",
+  Default = false,
+  Callback = function(bool)
+    getgenv().Sword= bool
+    if bool then 
+      doSword()
+    end
+  end})
+  autogainTab:AddToggle({
+  Name = "staff",
+  Default = false,
+  Callback = function(bool)
+    getgenv().Staff= bool
+    if bool then 
+      doStaff()
+    end
+  end})
+  autogainTab:AddToggle({
+  Name = "Slayer",
+  Default = false,
+  Callback = function(bool)
+    getgenv().Slayer= bool
+    if bool then 
+      doSlayer()
+    end
+  end})
+  autogainTab:AddToggle({
+  Name = "destroyer",
+  Default = false,
+  Callback = function(bool)
+    getgenv().Destroyer= bool
+    if bool then 
+      doDestroyer()
+    end
+  end})
+  autogainTab:AddToggle({
+  Name = "blade",
+  Default = false,
+  Callback = function(bool)
+    getgenv().Blade= bool
+    if bool then 
+      doBlade()
     end
   end})
   
